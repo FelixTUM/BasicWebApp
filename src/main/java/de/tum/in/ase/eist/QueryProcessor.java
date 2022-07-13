@@ -28,6 +28,21 @@ public class QueryProcessor {
                 }
             }
             return String.valueOf(sum);
+        } else if (query.contains("largest")) {
+            query.replace(",","");
+            String[] wordList = query.split(" ");
+            int largest = 0;
+
+            for (String word : wordList){
+                try {
+                    int intOfWord = Integer.parseInt(word);
+                    largest = intOfWord;
+                }
+                catch (Exception e){
+                    //
+                }
+            }
+            return String.valueOf(largest);
         }
         else { // TODO extend the programm here
             //hello world
